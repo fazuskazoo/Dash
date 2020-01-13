@@ -1,12 +1,9 @@
 from flask import Flask, render_template, Blueprint
 
 
-bp = Blueprint('dashboard', __name__, url_prefix='/')
+bp = Blueprint('dashboard', __name__, url_prefix='/dashboard')
 
-@bp.route('/')
-def index():
-    return render_template("/dashboard/index2.html")
 
-@bp.route('/hello')
-def hello():
+@bp.route('/tables')
+def tables():
     return render_template("/dashboard/tables.html")
