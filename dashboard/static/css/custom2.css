@@ -706,8 +706,10 @@ a:focus {
     display: block;
     width: 100%;
     text-align: left;
-    padding: 1rem;
-    width: 14rem;
+     /*
+     padding: 1rem;
+     width: 14rem;
+     */
   }
   .sidebar .nav-item .nav-link i {
     font-size: 0.85rem;

@@ -9,4 +9,4 @@ app.register_blueprint(dashboard.bp)
 
 @app.route('/')
 def index():
-    return render_template("/dashboard/index3.html")
+    return render_template("/dashboard/index.html")

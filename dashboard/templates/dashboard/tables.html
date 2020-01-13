@@ -2,4 +2,60 @@
 
 {% block content %}
   <h1>Tables</h1>
+<table id="table_id" class="table table-striped table-hover">
+  <tr data-tt-id="1">
+    <td>Parent</td>
+  </tr>
+  <tr data-tt-id="2" data-tt-parent-id="1">
+    <td>Child</td>
+  </tr>
+    <tr data-tt-id="2" data-tt-parent-id="1">
+    <td>Child 2</td>
+  </tr>
+    <tr data-tt-id="2" data-tt-parent-id="1">
+    <td>Child 3</td>
+  </tr>
+    <tr data-tt-id="2" data-tt-parent-id="1">
+    <td>Child 4</td>
+  </tr>
+  <tr data-tt-id="3">
+    <td>Parent</td>
+  </tr>
+  <tr data-tt-id="4" data-tt-parent-id="3">
+    <td>Child</td>
+  </tr>
+    <tr data-tt-id="4" data-tt-parent-id="3">
+    <td>Child 2</td>
+  </tr>
+    <tr data-tt-id="4" data-tt-parent-id="3">
+    <td>Child 3</td>
+  </tr>
+    <tr data-tt-id="4" data-tt-parent-id="3">
+    <td>Child 4</td>
+  </tr>
+</table>
+<br>
+
+<button type="button" id="expander">Expand All</button>
+<button type="button" id="collapser">Collapse All</button>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/table/jquery.treetable.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/table/jquery.treetable.theme.default.css') }}">
+
+<script type=text/javascript src="{{  url_for('static', filename='js/treetable/jquery.treetable.js') }}"></script>
+
+<script>
+$( document ).ready(function() {
+    t = $("#table_id").treetable({ expandable: true });
+
+    $("#collapser").click(function() {
+      $("#table_id").treetable('collapseAll');
+    });
+
+    $("#expander").click(function() {
+      $("#table_id").treetable('expandAll');
+    });
+});
+</script>
+
 {% endblock %}
