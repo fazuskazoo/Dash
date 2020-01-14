@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h1>Tables</h1>
+
+<table id="table_id" class="table table-striped table-hover">
+	<tr class="treegrid-1">
+		<td>Root node</td><td>Additional info</td>
+	</tr>
+	<tr class="treegrid-2 treegrid-parent-1">
+		<td>Node 1-1</td><td>Additional info</td>
+	</tr>
+	<tr class="treegrid-3 treegrid-parent-1">
+		<td>Node 1-2</td><td>Additional info</td>
+	</tr>
+	<tr class="treegrid-4 treegrid-parent-3">
+		<td>Node 1-2-1</td><td>Additional info</td>
+	</tr>
+</table>
+
+<br>
+
+<button type="button" id="expander">Expand All</button>
+<button type="button" id="collapser">Collapse All</button>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/treegrid/bootstrap-table.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/treegrid/jquery-treegrid.css') }}">
+
+<script type=text/javascript src="{{  url_for('static', filename='js/treegrid/bootstrap-table.js') }}"></script>
+<script type=text/javascript src="{{  url_for('static', filename='js/treegrid/bootstrap-table-treegrid.js') }}"></script>
+<script type=text/javascript src="{{  url_for('static', filename='js/treegrid/jquery.treegrid.js') }}"></script>
+
+<script>
+$( document ).ready(function() {
+    t = $("#table_id").bootstrapTable();
+
+
+});
+</script>
+
+{% endblock %}
