@@ -9,3 +9,6 @@ app.register_blueprint(dashboard.bp)
 def index():
     return render_template("/dashboard/index.html")
 
+@app.route('/all')
+def all():
+    return render_template("/dashboard/index_all.html")
