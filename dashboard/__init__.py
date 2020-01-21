@@ -7,8 +7,8 @@ app.register_blueprint(dashboard.bp)
 
 @app.route('/')
 def index():
-    return render_template("/dashboard/index.html")
+    return render_template("/dashboard/demo2.html")
 
-@app.route('/all')
+@app.route('/demo')
 def all():
     return render_template("/dashboard/index_all.html")
